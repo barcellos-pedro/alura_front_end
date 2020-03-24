@@ -15,7 +15,7 @@ function atualizaTamanhoFrase() {
     tamanhoFrase.text(numPalavras);
 }
 
-function atualizaContadores() {
+function inicializaContadores() {
     campo.on("input", () => {
         var conteudo = campo.val(); // val é abreviação de 'value', val pega conteudo das tags de 'Input'
         var qtdPalavras = conteudo.split(/\S+/).length - 1; // Expressão regular que busca qualquer tipo de espaço vazio
