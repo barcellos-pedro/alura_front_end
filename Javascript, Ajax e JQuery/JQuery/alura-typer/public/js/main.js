@@ -31,6 +31,7 @@ function inicializaContadores() {
 function inicializaCronometro() {
     var tempoRestante = $("#tempo-digitacao").text()
     campo.one("focus", () => { // focus considera o foco mesmo com dando tab no teclado // .one funciona somente uma vez
+        $("#botao-reiniciar").attr("disabled",true);
         var cronometroId = setInterval(() => {
             tempoRestante--;
             $("#tempo-digitacao").text(tempoRestante);
@@ -38,6 +39,7 @@ function inicializaCronometro() {
             if (tempoRestante < 1) {
                 campo.attr("disabled", true); // adiciona um novo atributo no textarea, e como o 'disabled' não possui valor precisamos setar se é true ou false
                 clearInterval(cronometroId);
+                $("#botao-reiniciar").attr("disabled",false);
             }
         }, 1000);
     });
