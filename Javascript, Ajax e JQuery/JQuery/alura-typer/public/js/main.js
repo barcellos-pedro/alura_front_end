@@ -1,10 +1,11 @@
 var tempoInicial = $("#tempo-digitacao").text() // essa variavel não será alterada no cronometro
 var campo = $(".campo-digitacao");
 
-$(function(){ // Igual a $(document).ready(), roda quando a página for carregada completamente
+$(()=> { // Igual a $(document).ready(), roda quando a página for carregada completamente
     atualizaTamanhoFrase();
     inicializaContadores();
     inicializaCronometro();
+    inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
 });
 
@@ -31,7 +32,7 @@ function inicializaContadores() {
 function inicializaCronometro() {
     var tempoRestante = $("#tempo-digitacao").text()
     campo.one("focus", () => { // focus considera o foco mesmo com dando tab no teclado // .one funciona somente uma vez
-        $("#botao-reiniciar").attr("disabled",true);
+        $("#botao-reiniciar").attr("disabled", true);
         var cronometroId = setInterval(() => {
             tempoRestante--;
             $("#tempo-digitacao").text(tempoRestante);
@@ -40,11 +41,27 @@ function inicializaCronometro() {
                 campo.attr("disabled", true); // adiciona um novo atributo no textarea, e como o 'disabled' não possui valor precisamos setar se é true ou false
                 clearInterval(cronometroId);
                 campo.toggleClass("campo-desativado"); // ao invés de usar campo.addClass()
-                $("#botao-reiniciar").attr("disabled",false);
+                $("#botao-reiniciar").attr("disabled", false);
             }
         }, 1000);
     });
 };
+
+function inicializaMarcadores() {
+    var frase = $(".frase").text();
+    campo.on("input", () => {
+        var digitado = campo.val();
+        var comparavel = frase.substr(0, digitado.length);
+        if (digitado == comparavel) {
+            campo.addClass("borda-verde");
+            campo.removeClass("borda-vermelha");
+        }
+        else {
+            campo.addClass("borda-vermelha");
+            campo.removeClass("borda-verde");
+        }
+    });
+}
 
 function reiniciaJogo() {
     campo.attr("disabled", false);
@@ -52,6 +69,8 @@ function reiniciaJogo() {
     $("#contador-palavras").text("0");
     $("#contador-caracteres").text("0");
     $("#tempo-digitacao").text(tempoInicial);
+    campo.removeClass("borda-vermelha");
+    campo.removeClass("borda-verde");
     campo.toggleClass("campo-desativado"); // ao invés de usar campo.removeClass()
-    inicializaCronometro();
+    inicializaCronometro(); // chama a função novamente por conta do evento 'one'
 };
