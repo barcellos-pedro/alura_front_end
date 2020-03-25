@@ -32,20 +32,22 @@ function inicializaContadores() {
 function inicializaCronometro() {
     var tempoRestante = $("#tempo-digitacao").text()
     campo.one("focus", () => { // focus considera o foco mesmo com dando tab no teclado // .one funciona somente uma vez
-        $("#botao-reiniciar").attr("disabled", true);
         var cronometroId = setInterval(() => {
             tempoRestante--;
             $("#tempo-digitacao").text(tempoRestante);
-
             if (tempoRestante < 1) {
-                campo.attr("disabled", true); // adiciona um novo atributo no textarea, e como o 'disabled' não possui valor precisamos setar se é true ou false
                 clearInterval(cronometroId);
-                campo.toggleClass("campo-desativado"); // ao invés de usar campo.addClass()
-                $("#botao-reiniciar").attr("disabled", false);
+                finalizaJogo();
             }
         }, 1000);
     });
 };
+
+function finalizaJogo(){
+    campo.attr("disabled", true); // adiciona um novo atributo no textarea, e como o 'disabled' não possui valor precisamos setar se é true ou false
+    campo.toggleClass("campo-desativado"); // ao invés de usar campo.addClass()
+    inserePlacar();
+}
 
 function inicializaMarcadores() {
     var frase = $(".frase").text();
@@ -69,6 +71,17 @@ function inicializaMarcadores() {
             campo.removeClass("borda-verde");
         }*/
     });
+}
+
+function inserePlacar(){
+    var corpoTabela = $(".placar").find("tbody");
+    var usuario = "Pedro";
+    var numPalavras = $("#contador-palavras").text();
+    var linha = "<tr>"+
+                    "<td>"+ usuario + "</td>"+
+                    "<td>"+ numPalavras + "</td>"+
+                "</tr>";
+    corpoTabela.prepend(linha);
 }
 
 function reiniciaJogo() {
