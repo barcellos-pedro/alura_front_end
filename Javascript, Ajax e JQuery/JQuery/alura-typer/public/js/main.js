@@ -74,14 +74,14 @@ function inicializaMarcadores() {
 }
 
 function inserePlacar(){
-    var corpoTabela = $(".placar").find("tbody");
+    var corpoTabela = $(".placar").find("tbody"); // vai na section e depois procura a tbody dentro dela
     var usuario = "Pedro";
     var numPalavras = $("#contador-palavras").text();
     var linha = "<tr>"+
                     "<td>"+ usuario + "</td>"+
                     "<td>"+ numPalavras + "</td>"+
                 "</tr>";
-    corpoTabela.prepend(linha);
+    corpoTabela.prepend(linha); // prepend adiciona como elemento filho no início da tabela(inverso do append)
 }
 
 function reiniciaJogo() {
