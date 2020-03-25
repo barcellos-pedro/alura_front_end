@@ -51,7 +51,15 @@ function inicializaMarcadores() {
     var frase = $(".frase").text();
     campo.on("input", () => {
         var digitado = campo.val();
-        var comparavel = frase.substr(0, digitado.length);
+        var digitouCorreto = frase.startsWith(digitado); // função do ECMA Script 6, que retorna true ou false
+        if(digitouCorreto) {
+            campo.addClass("borda-verde");
+            campo.removeClass("borda-vermelha");
+           } else {
+            campo.addClass("borda-vermelha");
+            campo.removeClass("borda-verde");
+           }
+        /*var comparavel = frase.substr(0, digitado.length); // Comparação feita com substr()
         if (digitado == comparavel) {
             campo.addClass("borda-verde");
             campo.removeClass("borda-vermelha");
@@ -59,7 +67,7 @@ function inicializaMarcadores() {
         else {
             campo.addClass("borda-vermelha");
             campo.removeClass("borda-verde");
-        }
+        }*/
     });
 }
 
