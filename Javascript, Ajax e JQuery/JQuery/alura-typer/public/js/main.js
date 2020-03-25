@@ -39,6 +39,7 @@ function inicializaCronometro() {
             if (tempoRestante < 1) {
                 campo.attr("disabled", true); // adiciona um novo atributo no textarea, e como o 'disabled' não possui valor precisamos setar se é true ou false
                 clearInterval(cronometroId);
+                campo.addClass("campo-desativado");
                 $("#botao-reiniciar").attr("disabled",false);
             }
         }, 1000);
@@ -51,5 +52,6 @@ function reiniciaJogo() {
     $("#contador-palavras").text("0");
     $("#contador-caracteres").text("0");
     $("#tempo-digitacao").text(tempoInicial);
+    campo.removeClass("campo-desativado");
     inicializaCronometro();
 };

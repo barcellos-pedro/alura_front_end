@@ -4,28 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <!-- Seja bem vindo ao curso de jQuery :) -->
-    <h1>Alura Typer</h1>
+    <div class="container">
+        <!-- Seja bem vindo ao curso de jQuery :) -->
+        <h1 class="center">Alura Typer</h1>
 
-    <p class="frase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate doloribus non soluta
-        accusantium! Accusamus modi repellendus, odio praesentium pariatur aperiam blanditiis iste dignissimos cum
-        deserunt, ipsa quam molestiae ratione. Vero?</p>
+        <p class="frase center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate doloribus non soluta
+            accusantium! Accusamus modi repellendus, odio praesentium pariatur aperiam blanditiis iste dignissimos cum
+            deserunt, ipsa quam molestiae ratione. Vero?</p>
 
-    <ul class="informacoes">
-        <li> <span id="tamanho-frase">0</span> palavras</li>
-        <li> <span id="tempo-digitacao">5</span> segundos</li>
-    </ul>
+        <ul class="informacoes center">
+            <li> <span id="tamanho-frase">0</span> palavras</li>
+            <li> <span id="tempo-digitacao">5</span> segundos</li>
+        </ul>
 
-    <textarea class="campo-digitacao" cols="40" rows="8"></textarea>
-    <button id="botao-reiniciar">Reiniciar jogo</button>
+        <textarea class="campo-digitacao" cols="40" rows="8"></textarea>
+        <button id="botao-reiniciar">Reiniciar jogo</button>
 
-    <ul>
-        <li> <span id="contador-caracteres">0</span> caracteres</li>
-        <li> <span id="contador-palavras">0</span> palavras</li>
-    </ul>
+        <ul class="center">
+            <li> <span id="contador-caracteres">0</span> caracteres</li>
+            <li> <span id="contador-palavras">0</span> palavras</li>
+        </ul>
+    </div>
 
     <!-- ## Scripts a serem carregados ##-->
     <script src="js/jquery.js"></script>
