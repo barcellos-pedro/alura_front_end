@@ -1,7 +1,7 @@
 var tempoInicial = $("#tempo-digitacao").text() // essa variavel não será alterada no cronometro
 var campo = $(".campo-digitacao");
 
-$(()=> { // Igual a $(document).ready(), roda quando a página for carregada completamente
+$(() => { // Igual a $(document).ready(), roda quando a página for carregada completamente
     atualizaTamanhoFrase();
     inicializaContadores();
     inicializaCronometro();
@@ -43,7 +43,7 @@ function inicializaCronometro() {
     });
 };
 
-function finalizaJogo(){
+function finalizaJogo() {
     campo.attr("disabled", true); // adiciona um novo atributo no textarea, e como o 'disabled' não possui valor precisamos setar se é true ou false
     campo.toggleClass("campo-desativado"); // ao invés de usar campo.addClass()
     inserePlacar();
@@ -54,13 +54,13 @@ function inicializaMarcadores() {
     campo.on("input", () => {
         var digitado = campo.val();
         var digitouCorreto = frase.startsWith(digitado); // função do ECMA Script 6, que retorna true ou false
-        if(digitouCorreto) {
+        if (digitouCorreto) {
             campo.addClass("borda-verde");
             campo.removeClass("borda-vermelha");
-           } else {
+        } else {
             campo.addClass("borda-vermelha");
             campo.removeClass("borda-verde");
-           }
+        }
         /*var comparavel = frase.substr(0, digitado.length); // Comparação feita com substr()
         if (digitado == comparavel) {
             campo.addClass("borda-verde");
@@ -73,16 +73,23 @@ function inicializaMarcadores() {
     });
 }
 
-function inserePlacar(){
+function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody"); // vai na section e depois procura a tbody dentro dela
     var usuario = "Pedro";
     var numPalavras = $("#contador-palavras").text();
-    var linha = "<tr>"+
-                    "<td>"+ usuario + "</td>"+
-                    "<td>"+ numPalavras + "</td>"+
+    var botaoRemover = "<a href='#'><i class='small material-icons'>delete</i></a>";
+    var linha = "<tr>" +
+                    "<td>" + usuario + "</td>" +
+                    "<td>" + numPalavras + "</td>" +
+                    "<td>" + botaoRemover + "</td>"+
                 "</tr>";
     corpoTabela.prepend(linha); // prepend adiciona como elemento filho no início da tabela(inverso do append)
 }
+
+$(".botao-remover").click(function(event){ // passa o event para em seguida previnir a ação padrão (linha seguinte) do href de subir para o topo da página
+    event.preventDefault();
+    $(this).parent().parent().remove(); // this não funcionou com arrow function
+});
 
 function reiniciaJogo() {
     campo.attr("disabled", false);
