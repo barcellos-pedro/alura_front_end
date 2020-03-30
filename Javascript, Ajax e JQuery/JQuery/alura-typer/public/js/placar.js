@@ -8,6 +8,19 @@ function inserePlacar() {
     var linha = novaLinha(usuario, numPalavras);
     linha.find(".botao-remover").click(removeLinha);
     corpoTabela.prepend(linha); // prepend adiciona como elemento filho no início da tabela(inverso do append)
+    $(".placar").slideDown(500);
+    scrollPlacar();
+}
+
+function scrollPlacar(){
+    var posicaoPlacar = $(".placar").offset().top;
+    // A função offset() nos retorna a distância em que o elemento está do topo e da esquerda da página.
+    // Se acessarmos o valor do topo (top), teremos o valor exato para onde queremos scrollar a página.
+    console.log(posicaoPlacar);
+    $("html, body").animate(
+        {
+            scrollTop: posicaoPlacar+"px" // Concatena o valor da variável com o 'px', necessário para ser um valor CSS da propiedade scrollTop
+        }, 1000);
 }
 
 function novaLinha(usuario, palavras) {
