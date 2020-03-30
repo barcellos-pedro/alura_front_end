@@ -33,7 +33,11 @@ function novaLinha(usuario, palavras){
 function removeLinha(event){ // passa o event para em seguida previnir a ação padrão (linha seguinte) do href de subir para o topo da página
     event.preventDefault();
     // Envolvemos o this no seletor $() para ele poder ter os poderes do jQuery
-    $(this).parent().parent().remove(); // this não funcionou com arrow function // parent 2x para poder subir para a TR, a<td<tr
+    //$(this).parent().parent().remove(); // this não funcionou com arrow function // parent 2x para poder subir para a TR, a<td<tr
+    $(this).parent().parent().fadeOut(1000); // Oculta o elemento com efeito de animação -possui fadeToggle tbm-
+    setTimeout(() => {
+        $(this).parent().parent().remove();
+    }, 1000);
 };
 
 function mostraPlacar(){
