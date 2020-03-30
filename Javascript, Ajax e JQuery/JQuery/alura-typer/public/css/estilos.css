@@ -1,3 +1,7 @@
+body{
+    overflow: scroll; /* A página já vem com um espaço reservado para a barra de rolagem */
+}
+
 .campo-digitacao {
     font-size: 20px;
     height: 130px;
@@ -23,4 +27,8 @@
 
 .borda-vermelha{
     border: 3px solid red;
+}
+
+.placar{
+    display: none;
 }

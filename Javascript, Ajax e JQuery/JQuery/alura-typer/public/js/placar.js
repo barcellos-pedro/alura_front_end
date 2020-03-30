@@ -1,3 +1,5 @@
+$("#botao-placar").click(mostraPlacar);
+
 function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody"); // vai na section e depois procura a tbody dentro dela
     var usuario = "Pedro";
@@ -33,3 +35,7 @@ function removeLinha(event){ // passa o event para em seguida previnir a ação 
     // Envolvemos o this no seletor $() para ele poder ter os poderes do jQuery
     $(this).parent().parent().remove(); // this não funcionou com arrow function // parent 2x para poder subir para a TR, a<td<tr
 };
+
+function mostraPlacar(){
+    $(".placar").slideToggle(600);
+}
