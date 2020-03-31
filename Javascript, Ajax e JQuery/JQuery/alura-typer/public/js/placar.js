@@ -16,7 +16,7 @@ function scrollPlacar(){
     var posicaoPlacar = $(".placar").offset().top;
     // A função offset() nos retorna a distância em que o elemento está do topo e da esquerda da página.
     // Se acessarmos o valor do topo (top), teremos o valor exato para onde queremos scrollar a página.
-    console.log(posicaoPlacar);
+    //console.log(posicaoPlacar);
     $("html, body").animate(
         {
             scrollTop: posicaoPlacar+"px" // Concatena o valor da variável com o 'px', necessário para ser um valor CSS da propiedade scrollTop
