@@ -9,6 +9,11 @@ $(() => { // Igual a $(document).ready(), roda quando a página for carregada co
     $("#botao-reiniciar").click(reiniciaJogo);
 });
 
+function atualizaTempoInicial(tempo){
+    tempoInicial = tempo; // Seta o tempo de acordo com a nova frase ao reiniciar o jogo.
+    $("#tempo-digitacao").text(tempo);
+}
+
 function atualizaTamanhoFrase() {
     var frase = $(".frase").text(); // $ é igual jQuery, a variável irá retornar um objeto jQuery que contém nosso elemento
     var numPalavras = frase.split(" ").length; // quebra a frase sempre que houve espaços e guarda em uma variavel a quantidade de palavras a cada 'espaço'
@@ -30,8 +35,8 @@ function inicializaContadores() {
 };
 
 function inicializaCronometro() {
-    var tempoRestante = $("#tempo-digitacao").text();
     campo.one("focus", () => { // focus considera o foco mesmo com dando tab no teclado // .one funciona somente uma vez
+        var tempoRestante = $("#tempo-digitacao").text(); // Pega o tempo da frase ao estar em foco o campo
         var cronometroId = setInterval(() => {
             tempoRestante--;
             $("#tempo-digitacao").text(tempoRestante);
@@ -50,8 +55,8 @@ function finalizaJogo() {
 }
 
 function inicializaMarcadores() {
-    var frase = $(".frase").text();
     campo.on("input", () => {
+        var frase = $(".frase").text(); // Pega o conteúdo ao começar digitar
         var digitado = campo.val();
         var digitouCorreto = frase.startsWith(digitado); // função do ECMA Script 6, que retorna true ou false
         if (digitouCorreto) {
