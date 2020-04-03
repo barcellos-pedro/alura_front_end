@@ -41,3 +41,7 @@ body{
 #spinner{
   display: none;
 }
+
+#frase-id{
+  width: 40px;
+}
