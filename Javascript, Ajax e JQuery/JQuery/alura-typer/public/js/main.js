@@ -7,6 +7,7 @@ $(() => { // Igual a $(document).ready(), roda quando a página for carregada co
     inicializaCronometro();
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
+    atualizaPlacar();
 });
 
 function atualizaTempoInicial(tempo){
@@ -36,7 +37,7 @@ function inicializaContadores() {
 
 function inicializaCronometro() {
     campo.one("focus", () => { // focus considera o foco mesmo com dando tab no teclado // .one funciona somente uma vez
-        var tempoRestante = $("#tempo-digitacao").text(); // Pega o tempo da frase ao estar em foco o campo 
+        var tempoRestante = $("#tempo-digitacao").text(); // Pega o tempo da frase ao estar em foco o campo
         var cronometroId = setInterval(() => {
             tempoRestante--;
             $("#tempo-digitacao").text(tempoRestante);

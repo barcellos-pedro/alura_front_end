@@ -75,9 +75,20 @@ function sincronizaPlacar(){
       placar.push(score);
     });
 
-    var dados = {placar: placar};
+    var dados = {placar: placar}; // Guarda a lista em um objeto para poder fazer o POST
 
-    $.post("http://localhost:3000/placar", dados, function(){
+    $.post("http://localhost:3000/placar", dados, ()=>{
       console.log("Placar sincronizado com sucesso!")
     })
+}
+
+function atualizaPlacar(){
+  $.get("http://localhost:3000/placar", (data)=>{
+    $(data).each(function(){ // Envolvemos o data no $() para poder utilizar o this na linha abaixo
+        var linha = novaLinha(this.usuario, this.pontos)
+        $("tbody").append(linha);
+    });
+
+  });
+
 }
