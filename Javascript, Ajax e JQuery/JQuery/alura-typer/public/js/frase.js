@@ -1,5 +1,5 @@
 $("#botao-frase").click(fraseAleatoria);
-$("#frase-id").click(buscaFrase);
+$("#botao-frase-id").click(buscaFrase);
 
 function fraseAleatoria() {
     $("#spinner").toggle();
@@ -36,5 +36,8 @@ function buscaFrase(){
 }
 
 function trocaFrase(data){
-    console.log(data);
+    var frase = $(".frase");
+    frase.text(data.texto);
+    atualizaTamanhoFrase();
+    atualizaTempoInicial(data.tempo);
 }
