@@ -7,7 +7,7 @@ function inserePlacar() {
     var numPalavras = $("#contador-palavras").text();
     // Não é possível atrelar evento de remover para string com elementos HTML, por isso é necessário CRIAR UM ELEMENTO HTML com o jQuery (função novaLinha())
     var linha = novaLinha(usuario, numPalavras);
-    linha.find(".botao-remover").click(removeLinha);
+    linha.find(".botao-remover").click(removeLinha); // Para poder remover a linha desejada após criada
     corpoTabela.prepend(linha); // prepend adiciona como elemento filho no início da tabela(inverso do append)
     $(".placar").slideDown(500);
     scrollPlacar();
@@ -85,7 +85,8 @@ function sincronizaPlacar(){
 function atualizaPlacar(){
   $.get("http://localhost:3000/placar", (data)=>{
     $(data).each(function(){ // Envolvemos o data no $() para poder utilizar o this na linha abaixo
-        var linha = novaLinha(this.usuario, this.pontos)
+        var linha = novaLinha(this.usuario, this.pontos);
+        linha.find(".botao-remover").click(removeLinha); // Para poder remover a linha desejada após criada
         $("tbody").append(linha);
     });
 
