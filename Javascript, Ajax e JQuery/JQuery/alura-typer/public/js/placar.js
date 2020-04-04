@@ -1,4 +1,5 @@
 $("#botao-placar").click(mostraPlacar);
+$("#botao-sync").click(sincronizaPlacar);
 
 function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody"); // vai na section e depois procura a tbody dentro dela
@@ -57,4 +58,8 @@ function mostraPlacar() {
     $(".placar").stop().slideToggle(600);
     // Antes de executar a animação, paramos a que estiver acontecendo através da função stop do jQuery
     //Agora, ao clicarmos diversas vezes no botão do placar, a animação não será executada várias vezes, só será executada a última animação que nós chamamos!
+}
+
+function sincronizaPlacar(){
+  console.log("Clicado");
 }
