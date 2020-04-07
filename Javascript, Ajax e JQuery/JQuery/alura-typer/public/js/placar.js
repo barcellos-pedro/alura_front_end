@@ -78,8 +78,20 @@ function sincronizaPlacar(){
     var dados = {placar: placar}; // Guarda a lista em um objeto para poder fazer o POST
 
     $.post("http://localhost:3000/placar", dados, ()=>{
-      console.log("Placar sincronizado com sucesso!")
+      console.log("Placar sincronizado com sucesso!");
+      $(".tooltip").tooltipster("open").tooltipster("content", "Sucesso ao sincronizar!");
     })
+
+    .fail(()=>{
+      $(".tooltip").tooltipster("open").tooltipster("content", "Falha ao sincronizar.");
+    })
+
+    .always(()=>{
+      setTimeout(()=>{
+        $(".tooltip").tooltipster("close");
+      },1200)
+    });
+
 }
 
 function atualizaPlacar(){

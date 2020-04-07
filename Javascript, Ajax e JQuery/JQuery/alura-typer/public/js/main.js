@@ -8,9 +8,14 @@ $(() => { // Igual a $(document).ready(), roda quando a página for carregada co
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
     atualizaPlacar();
+
     $("#usuarios").selectize({
       create: true,
       sortField: 'text'
+    });
+
+    $(".tooltip").tooltipster({
+      trigger: "custom"
     })
 });
 
