@@ -3,7 +3,7 @@ $("#botao-sync").click(sincronizaPlacar);
 
 function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody"); // vai na section e depois procura a tbody dentro dela
-    var usuario = "Pedro";
+    var usuario = $("#usuarios").val();
     var numPalavras = $("#contador-palavras").text();
     // Não é possível atrelar evento de remover para string com elementos HTML, por isso é necessário CRIAR UM ELEMENTO HTML com o jQuery (função novaLinha())
     var linha = novaLinha(usuario, numPalavras);
