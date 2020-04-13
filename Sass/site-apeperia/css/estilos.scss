@@ -1,6 +1,12 @@
 $cor-padrao: #c24e4b;
 $cor-auxiliar: #1e2c35;
 $cor-branca: #fff;
+$raio: 0.3em;
+
+@mixin borda-arrendodada{
+  -webkit-border-radius: $raio;
+  border-radius: $raio;
+}
 
 /** Geral **/
 body {
@@ -99,8 +105,7 @@ header .container {
   border: 0;
   padding: .6em;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
+  @include borda-arrendodada;
   box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
   font-weight: bold;
 }
@@ -225,8 +230,7 @@ header .container {
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
+  @include borda-arrendodada;
   box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
   margin-left: 2em;
 }
@@ -310,8 +314,7 @@ textarea {
   width: 100%;
   margin-bottom: .8em;
   padding: 4px 8px;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
+  @include borda-arrendodada;
   border: 2px solid #ccc;
 }
 
@@ -323,8 +326,7 @@ textarea {
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
+  @include borda-arrendodada;
   box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
 }
 
@@ -348,7 +350,7 @@ footer::after {
 
 footer::before {
   content: "";
-  background: $cor-auxiliar;
+  background: #1e2c35;
   top: 0;
   left: 0;
   bottom: 0;
