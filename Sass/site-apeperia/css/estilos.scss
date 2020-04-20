@@ -13,6 +13,12 @@ $cor-branca: #fff;
   box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
 }
 
+@mixin image-replacement{ // Tirar o texto de um elemento e manter um background
+  text-indent: -9999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
 /** Geral **/
 body {
   font-family: "Roboto Slab", serif;
@@ -148,11 +154,9 @@ header .container {
   display: inline-block;
   width: 50px;
   height: 60px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
   background-position: center;
   margin: 1em 1.5em 0 0;
+  @include image-replacement;
 }
 
 .plataformas li:nth-child(1) {
@@ -235,7 +239,7 @@ header .container {
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  @include borda-arredondada();
+  @include borda-arredondada;
   @include sombra-padrao;
   margin-left: 2em;
 }
@@ -412,10 +416,8 @@ footer a {
   display: block;
   width: 55px;
   height: 55px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
   margin-left: 1em;
+  @include image-replacement;
 }
 
 .social a {

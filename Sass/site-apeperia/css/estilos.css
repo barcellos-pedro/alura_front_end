@@ -111,11 +111,11 @@ header .container {
   display: inline-block;
   width: 50px;
   height: 60px;
+  background-position: center;
+  margin: 1em 1.5em 0 0;
   text-indent: -9999px;
   overflow: hidden;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 1em 1.5em 0 0; }
+  background-repeat: no-repeat; }
 
 .plataformas li:nth-child(1) {
   background-image: url(../imagens/logo-apple.png); }
@@ -336,10 +336,10 @@ footer a {
   display: block;
   width: 55px;
   height: 55px;
+  margin-left: 1em;
   text-indent: -9999px;
   overflow: hidden;
-  background-repeat: no-repeat;
-  margin-left: 1em; }
+  background-repeat: no-repeat; }
 
 .social a {
   background-position: top;
