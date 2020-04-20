@@ -59,7 +59,7 @@ header .container {
   position: relative;
 }
 
-.menu-principal { // Aqui utilizamos o nesting(aninhamento) do Sass
+.menu-principal { // Aqui utilizamos o nesting(aninhamento) do Sass. O interessante é não passar de 3 ou 4 itens no seletor pai, como boa prática.
   position: absolute;
   right: 0;
   top: -.5em;
@@ -75,7 +75,7 @@ header .container {
   a {
     color: white;
     text-decoration: none;
-    &:hover {
+    &:hover { // :hover corresponde ao elemento no qual está aninhado.
       text-decoration: underline;
     }
   }
@@ -210,22 +210,19 @@ header .container {
 
 .itens-plano {
   padding-left: 1.2em;
-}
-
-.itens-plano li {
-  font-size: 1em;
-  list-style: none;
-  border-bottom: 1px solid #acacac;
-  padding: .5em;
-  width: 14.8em;
-}
-
-.itens-plano li:last-child {
-  border: 0;
-}
-
-.itens-plano span {
-  float: right;
+  li {
+    font-size: 1em;
+    list-style: none;
+    border-bottom: 1px solid #acacac;
+    padding: .5em;
+    width: 14.8em;
+    &:last-child {
+      border: 0;
+    }
+  }
+  span {
+    float: right;
+  }
 }
 
 .plano button {
