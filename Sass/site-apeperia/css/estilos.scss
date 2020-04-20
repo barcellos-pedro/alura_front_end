@@ -1,9 +1,9 @@
+// Variaveis usadas no meu Sass
 $cor-padrao: #c24e4b;
 $cor-auxiliar: #1e2c35;
 $cor-branca: #fff;
-$raio: 0.3em;
-
-@mixin borda-arrendodada{
+// Mixins usados no meu Sass
+@mixin borda-arredondada($raio: 0.3em){ // Mixin criado com parâmetro que possui valor padrão
   -webkit-border-radius: $raio;
   border-radius: $raio;
 }
@@ -110,7 +110,7 @@ header .container {
   border: 0;
   padding: .6em;
   font-size: 1.2em;
-  @include borda-arrendodada;
+  @include borda-arredondada(50px); // Passamos o parâmetro desejado para não utilizar o valor padrão o mixin
   @include sombra-padrao;
   font-weight: bold;
 }
@@ -235,7 +235,7 @@ header .container {
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  @include borda-arrendodada;
+  @include borda-arredondada();
   @include sombra-padrao;
   margin-left: 2em;
 }
@@ -319,7 +319,7 @@ textarea {
   width: 100%;
   margin-bottom: .8em;
   padding: 4px 8px;
-  @include borda-arrendodada;
+  @include borda-arredondada;
   border: 2px solid #ccc;
 }
 
@@ -331,7 +331,7 @@ textarea {
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  @include borda-arrendodada;
+  @include borda-arredondada;
   @include sombra-padrao;
 }
 
