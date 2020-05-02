@@ -1,7 +1,8 @@
-// Com o Sass podemos passar o nome do arquivo sem a extensão para importar
+// Com o Sass podemos passar o nome do arquivo sem a extensão para importar arquivos SASS.
 @import 'helpers/variaveis';
 @import 'helpers/mixins';
 
+@import 'base/normalize.scss'; // Convertermos o arquivos do Normalize para concatenar o código com os demais arquivos.
 @import 'layout/geral';
 @import 'layout/header';
 @import 'layout/destaque';
