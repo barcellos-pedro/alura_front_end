@@ -1,4 +1,4 @@
 // Variaveis usadas no meu Sass
-$cor-padrao: #c24e4b;
-$cor-auxiliar: #1e2c35;
+$cor-padrao: darken(#c24e4b, 0); //Declaração para darken/lighten(cor, quantidade de 0-100)
+$cor-auxiliar: lighten(#1e2c35, 0);
 $cor-branca: #fff;
