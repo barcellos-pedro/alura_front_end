@@ -372,6 +372,9 @@ body {
 .container {
   width: 940px;
   margin: 0 auto; }
+  @media (max-width: 980px) {
+    .container {
+      width: 90%; } }
 
 .titulo-secao {
   text-decoration: underline;
@@ -394,9 +397,22 @@ header {
   height: 90px;
   width: 100%;
   position: absolute; }
+  @media (max-width: 980px) {
+    header {
+      height: auto; }
+      header h1 {
+        max-width: 50%;
+        margin: 0 auto; }
+        header h1 img {
+          max-width: 100%;
+          margin: .5em auto;
+          display: block; } }
 
 header .container {
   position: relative; }
+  @media (max-width: 980px) {
+    header .container {
+      position: static; } }
 
 .menu-principal {
   position: absolute;

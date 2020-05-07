@@ -5,10 +5,26 @@ header {
   height: 90px;
   width: 100%;
   position: absolute;
-}
+  @media #{$mq-mobile} { // Concatenando variável no Sass #{$variavel}
+      height: auto;
+      h1 {
+        max-width: 50%;
+        margin: 0 auto;
+        img {
+          max-width: 100%;
+          margin: .5em auto;
+          display: block;
+        } // fim do img
+      } // fim do h1
+    } // fim do media querie
+} // fim do header
 
 header .container {
   position: relative;
+  @media #{$mq-mobile}{ // Concatenando variável no Sass #{$variavel}
+    position: static;
+  }
+
 }
 
 .menu-principal { // Aqui utilizamos o nesting(aninhamento) do Sass. O interessante é não passar de 3 ou 4 itens no seletor pai, como boa prática.
