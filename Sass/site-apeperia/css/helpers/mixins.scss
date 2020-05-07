@@ -4,13 +4,13 @@
   border-radius: $raio;
 }
 
-@mixin sombra-padrao{
-  -webkit-box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
-}
-
-@mixin image-replacement{ // Tirar o texto de um elemento e manter um background
+%image-replacement{ // Tirar o texto de um elemento e manter um background
   text-indent: -9999px;
   overflow: hidden;
   background-repeat: no-repeat;
+}
+
+%sombra-padrao{ // % = Sass Placeholder
+  -webkit-box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
 }

@@ -32,7 +32,7 @@
   height: 60px;
   background-position: center;
   margin: 1em 1.5em 0 0;
-  @include image-replacement;
+  @extend %image-replacement;
 }
 
 .plataformas li:nth-child(1) {

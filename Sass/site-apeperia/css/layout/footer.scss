@@ -76,7 +76,7 @@ footer a {
   width: 55px;
   height: 55px;
   margin-left: 1em;
-  @include image-replacement;
+  @extend %image-replacement;
 }
 
 .social a {
