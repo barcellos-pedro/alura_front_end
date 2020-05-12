@@ -7,6 +7,9 @@
 form {
   margin: 0 auto;
   width: 50%;
+  @media #{$mq-mobile}{
+    width: auto;
+  }
 }
 
 .contato input,
