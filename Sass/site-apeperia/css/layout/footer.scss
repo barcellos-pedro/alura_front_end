@@ -79,19 +79,8 @@ footer a {
   @extend %image-replacement;
 }
 
-.social a {
-  background-position: top;
-  background-size: 50px 50px;
-}
-
-.social a[href*="facebook"] {
-  background-image: url(../imagens/facebook.png);
-}
-
-.social a[href*="twitter"] {
-  background-image: url(../imagens/twitter.png);
-}
-
-.social a[href*="instagram"] {
-  background-image: url(../imagens/instagram.png);
+@include all-plataformas-sprites;
+.plataformas-facebook, .plataformas-twitter, .plataformas-instagram{
+  width: 50px;
+  height: 50px;
 }
