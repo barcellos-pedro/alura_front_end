@@ -59,7 +59,7 @@
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  @include borda-arredondada;
+  @include border-radius(10px);
   @include box-shadow(black 0 2px 6.65px); 
   margin-left: 2em;
 }
