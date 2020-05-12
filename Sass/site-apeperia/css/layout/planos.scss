@@ -64,16 +64,17 @@
   margin-left: 2em;
 }
 
+@include all-sprite-sprites; // @include all-nomedapasta-sprites | Definie a imagem de fudo com o nome correto do Sprite automaticamente.
 .icone-check, .icone-x {
-  background: url(../imagens/sprite.png) no-repeat; // Utilizamos Sprites para ter um arquivo de imagem com +1 de uma imagem dentro, para reduzir o nº de requisições para o servidor.
+  // Utilizamos Sprites para ter um arquivo de imagem com +1 de uma imagem dentro, para reduzir o nº de requisições para o servidor.
   width: 18px;
   height: 18px;
 }
 
 .icone-check {
-  background-position: -5px -5px;
+  background-position: 0 0;
 }
 
 .icone-x {
-  background-position: -33px -5px;
+  background-position: 0 -24px;
 }

@@ -1,5 +1,5 @@
-.sprite-sprite {
-  background-image: url('/imagens/sprite-sed99d15b73.png');
+.sprite-sprite, .sprite-icone-ok, .sprite-icone-x {
+  background-image: url('/imagens/sprite-s1e035a9ecf.png');
   background-repeat: no-repeat;
 }
 
@@ -676,18 +676,25 @@ header .container {
   margin-left: 2em;
 }
 
+.sprite-icone-ok {
+  background-position: 0 0;
+}
+
+.sprite-icone-x {
+  background-position: 0 -23px;
+}
+
 .icone-check, .icone-x {
-  background: url(../imagens/sprite.png) no-repeat;
   width: 18px;
   height: 18px;
 }
 
 .icone-check {
-  background-position: -5px -5px;
+  background-position: 0 0;
 }
 
 .icone-x {
-  background-position: -33px -5px;
+  background-position: 0 -24px;
 }
 
 /** Blog **/

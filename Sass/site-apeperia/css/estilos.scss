@@ -1,5 +1,5 @@
 // Com o Sass podemos passar o nome do arquivo sem a extensão para importar arquivos SASS.
-$sprite-spacing: 2px; // Espaçamento nos Sprites | $nomedapasta-spacing | O nome da variável tem que ser o mesmo nome da Pasta com as imagens que irão se tornar um Sprite.
+$sprite-spacing: 5px; // Espaçamento nos Sprites | $nomedapasta-spacing | O nome da variável tem que ser o mesmo nome da Pasta com as imagens que irão se tornar um Sprite.
 @import 'sprite/*.png'; // Qualquer arquivo que tenha a extensão PNG.
 
 @import 'helpers/variaveis';
