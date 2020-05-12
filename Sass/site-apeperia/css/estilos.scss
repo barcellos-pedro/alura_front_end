@@ -1,8 +1,10 @@
 // Com o Sass podemos passar o nome do arquivo sem a extensão para importar arquivos SASS.
+@import 'sprite/*.png'; // Qualquer arquivo que tenha a extensão PNG.
+
 @import 'helpers/variaveis';
 @import 'helpers/mixins';
 
-@import 'base/normalize.scss'; // Convertermos o arquivos do Normalize para concatenar o código com os demais arquivos.
+@import 'base/normalize.scss'; // Convertermos o arquivo o Normalize para concatenar o código com os demais arquivos.
 @import 'layout/geral';
 @import 'layout/header';
 @import 'layout/destaque';

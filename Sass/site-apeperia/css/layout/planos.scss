@@ -65,7 +65,7 @@
 }
 
 .icone-check, .icone-x {
-  background: url(../imagens/sprite.png) no-repeat;
+  background: url(../imagens/sprite.png) no-repeat; // Utilizamos Sprites para ter um arquivo de imagem com +1 de uma imagem dentro, para reduzir o nº de requisições
   width: 18px;
   height: 18px;
 }
