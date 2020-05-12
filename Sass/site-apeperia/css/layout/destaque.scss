@@ -34,7 +34,7 @@
   padding: .6em;
   font-size: 1.2em;
   @include borda-arredondada(50px); // Passamos o parâmetro desejado para não utilizar o valor padrão o mixin
-  @extend %sombra-padrao; // Chamado o 'Placeholder'
+  @include box-shadow(black 0 2px 6.65px);
   font-weight: bold;
   color: $cor-branca;
 }

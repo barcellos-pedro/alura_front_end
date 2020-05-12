@@ -60,7 +60,7 @@
   height: 38px;
   font-size: 1.2em;
   @include borda-arredondada;
-  @extend %sombra-padrao;
+  @include box-shadow(black 0 2px 6.65px); 
   margin-left: 2em;
 }
 
