@@ -15,6 +15,10 @@
   box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
 }
 
+@function multiplica-pela-fonte($multiplicador){
+	@return $multiplicador * $tamanho-da-fonte-padrao;
+}
+
 /////////////////////////////
 // Importações do Compass
 

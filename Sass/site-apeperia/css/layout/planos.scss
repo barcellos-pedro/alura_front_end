@@ -9,7 +9,7 @@
 
 .plano {
   background: white;
-  width: 18 * $tamanho-da-fonte-padrao;
+  width: multiplica-pela-fonte(18);
   display: inline-block;
   margin: 1em 0 0 1.4em;
   padding-bottom: 2em;
