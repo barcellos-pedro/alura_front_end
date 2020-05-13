@@ -820,8 +820,8 @@ footer::before {
 }
 
 footer .container {
-  padding-top: 3em;
-  height: 6.5em;
+  padding-top: 48px;
+  height: 104px;
   position: relative;
 }
 

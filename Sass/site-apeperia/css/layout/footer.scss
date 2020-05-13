@@ -28,8 +28,9 @@ footer::before {
 }
 
 footer .container {
-  padding-top: 3em;
-  height: 6.5em;
+  $tamanho-fonte-padrao: 16px; // font-size default do HTML é 16px | EX: 3em = 3*16px
+  padding-top: 3 * $tamanho-fonte-padrao;
+  height: 6.5 * $tamanho-fonte-padrao;
   position: relative;
 }
 
